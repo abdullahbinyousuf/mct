@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events | MCT Department</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <div id="navbar-container"></div>
+
+    <div class="min-h-screen bg-slate-50 pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-12 border-b border-slate-200 pb-8">
+                <h1 class="text-4xl font-bold text-slate-900 mb-2">News & Events</h1>
+                <p class="text-slate-500 font-light">Stay updated with workshops, seminars, and department
+                    announcements.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                <!-- --- LEFT COLUMN: UPCOMING EVENTS --- -->
+                <div class="lg:col-span-2 space-y-12">
+
+                    <!-- Section: Events -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                            <i data-lucide="calendar" class="h-6 w-6 text-indigo-600"></i> Upcoming Events
+                        </h2>
+                        <div id="events-list" class="space-y-6">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Section: Department News -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                            <i data-lucide="bell" class="h-6 w-6 text-emerald-600"></i> Department News
+                        </h2>
+                        <div id="news-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- --- RIGHT COLUMN: SCHEDULE SIDEBAR --- -->
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-slate-900 text-white p-8 rounded-xl shadow-xl relative overflow-hidden sticky top-24">
+                        <div class="absolute top-0 right-0 p-4 opacity-5">
+                            <i data-lucide="calendar" class="h-40 w-40"></i>
+                        </div>
+
+                        <h3
+                            class="text-lg font-bold text-white mb-8 border-b border-slate-700 pb-2 font-mono tracking-widest uppercase">
+                            Quick Schedule</h3>
+                        <ul class="space-y-8 relative z-10">
+                            <li>
+                                <div class="flex gap-4 group cursor-pointer">
+                                    <div
+                                        class="flex-shrink-0 w-14 text-center bg-slate-800 rounded border border-slate-700 p-2 group-hover:border-indigo-500 transition">
+                                        <span class="block text-[10px] text-slate-400 font-mono uppercase">May</span>
+                                        <span class="block text-xl font-bold text-white">20</span>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-bold text-slate-200 group-hover:text-indigo-400 transition text-sm">
+                                            Future of VR in Education</h4>
+                                        <div class="flex items-center text-xs text-slate-500 mt-1 font-mono gap-2">
+                                            <i data-lucide="clock" class="h-3 w-3"></i> 10:00 AM
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex gap-4 group cursor-pointer">
+                                    <div
+                                        class="flex-shrink-0 w-14 text-center bg-slate-800 rounded border border-slate-700 p-2 group-hover:border-indigo-500 transition">
+                                        <span class="block text-[10px] text-slate-400 font-mono uppercase">Jun</span>
+                                        <span class="block text-xl font-bold text-white">05</span>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-bold text-slate-200 group-hover:text-indigo-400 transition text-sm">
+                                            Graduate Portfolio Reviews</h4>
+                                        <div class="flex items-center text-xs text-slate-500 mt-1 font-mono gap-2">
+                                            <i data-lucide="clock" class="h-3 w-3"></i> 09:00 AM
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex gap-4 group cursor-pointer">
+                                    <div
+                                        class="flex-shrink-0 w-14 text-center bg-slate-800 rounded border border-slate-700 p-2 group-hover:border-indigo-500 transition">
+                                        <span class="block text-[10px] text-slate-400 font-mono uppercase">Jun</span>
+                                        <span class="block text-xl font-bold text-white">12</span>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-bold text-slate-200 group-hover:text-indigo-400 transition text-sm">
+                                            Summer Tech Camp</h4>
+                                        <div class="flex items-center text-xs text-slate-500 mt-1 font-mono gap-2">
+                                            <i data-lucide="clock" class="h-3 w-3"></i> 08:00 AM
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full mt-10 py-3 border border-indigo-500/50 text-indigo-300 rounded hover:bg-indigo-500/10 transition font-mono text-xs uppercase tracking-wider">
+                            Download Academic Calendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="main.js"></script>
+    <script>
+        const NEWS_DATA = [
+            { id: 'n1', title: 'Multimedia AI Hackathon 2024', date: '2024-05-15', type: 'Event', summary: 'Showcasing innovation in AI-based 3D modeling, animation, and game development.', imageUrl: 'https://daffodilvarsity.edu.bd/images/event/874b71e650542a481b6c71deeaaab077.webp' },
+            { id: 'n2', title: 'MoU Signed with Future Studios', date: '2024-04-10', type: 'News', summary: 'Partnership to support internships, workshops, and real project experience.', imageUrl: 'https://daffodilvarsity.edu.bd/images/event/681802cf6f66d557d6af62b71f14b789.webp' },
+            { id: 'n3', title: 'Idea to Innovation Challenge', date: '2024-03-22', type: 'Event', summary: 'Annual competition for students to pitch creative tech startup ideas.', imageUrl: 'https://daffodilvarsity.edu.bd/images/event/681802cf6f66d557d6af62b71f14b789.webp' },
+            { id: 'n4', title: 'New AR/VR Lab Launch', date: '2024-02-15', type: 'News', summary: 'Department unveils state-of-the-art Mixed Reality facilities for research.', imageUrl: 'https://picsum.photos/id/180/600/400' },
+        ];
+
+        const upcomingEvents = NEWS_DATA.filter(item => item.type === 'Event' || item.type === 'Workshop');
+        const departmentNews = NEWS_DATA.filter(item => item.type === 'News');
+
+        const eventsList = document.getElementById('events-list');
+        const newsList = document.getElementById('news-list');
+
+        eventsList.innerHTML = upcomingEvents.map(item => `
+            <div class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-indigo-400 transition-all group flex flex-col md:flex-row h-full md:h-56 shadow-sm">
+              <div class="md:w-2/5 relative overflow-hidden">
+                <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div class="absolute top-0 left-0 bg-indigo-600 text-white text-[10px] font-mono font-bold px-3 py-1 uppercase">
+                  ${item.type}
+                </div>
+              </div>
+              <div class="p-6 md:w-3/5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center text-indigo-500 font-mono text-xs mb-3">
+                      <i data-lucide="calendar" class="h-3 w-3 mr-2"></i>
+                      ${new Date(item.date).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition">${item.title}</h3>
+                  <p class="text-slate-500 text-sm line-clamp-2 leading-relaxed">${item.summary}</p>
+                </div>
+                <button class="mt-4 flex items-center text-slate-900 font-mono text-xs hover:text-indigo-600 transition font-bold uppercase tracking-wider">
+                  View Details <i data-lucide="arrow-right" class="h-3 w-3 ml-1"></i>
+                </button>
+              </div>
+            </div>
+        `).join('');
+
+        newsList.innerHTML = departmentNews.map(item => `
+            <div class="bg-white p-6 rounded-lg border border-slate-200 hover:shadow-md transition">
+               <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded uppercase tracking-wide">${item.type}</span>
+               <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">${item.title}</h3>
+               <p class="text-slate-500 text-sm mb-4 line-clamp-3">${item.summary}</p>
+               <span class="text-xs text-slate-400 font-mono">${new Date(item.date).toLocaleDateString()}</span>
+            </div>
+        `).join('');
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

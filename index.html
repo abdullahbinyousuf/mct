@@ -1,213 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCT Department</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCT Department | Multimedia & Creative Technology</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+      .display-medium { font-size: 32px !important; line-height: 40px !important; }
+      .display-small { font-size: 28px !important; line-height: 36px !important; }
+      .headline-large { font-size: 24px !important; line-height: 32px !important; }
+      .headline-medium { font-size: 22px !important; line-height: 28px !important; }
+      .title-large { font-size: 18px !important; line-height: 24px !important; }
+      .body-large { font-size: 15px !important; line-height: 22px !important; }
+      .hero-section { min-height: 500px !important; padding: 100px 0 60px 0 !important; }
+      .grid-responsive { grid-template-columns: 1fr !important; }
+      .grid-2-col { grid-template-columns: 1fr !important; }
+      .hide-mobile { display: none !important; }
+      .container-google { padding: 0 20px !important; }
+    }
+    
+    @media (max-width: 480px) {
+      .display-medium { font-size: 28px !important; line-height: 36px !important; }
+      .headline-large { font-size: 22px !important; line-height: 28px !important; }
+      .hero-section { min-height: 450px !important; padding: 90px 0 50px 0 !important; }
+      .btn-google { padding: 10px 24px !important; font-size: 14px !important; }
+      .chip-google { font-size: 12px !important; padding: 4px 10px !important; }
+    }
+    
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+    
+    /* Image optimization */
+    img { max-width: 100%; height: auto; display: block; }
+    
+    /* Better link styles */
+    a { transition: all 0.2s ease; }
+  </style>
 </head>
+
 <body>
-    <!-- Header Section -->
-    
-<header>
-    <!-- Top Bar -->
-    
-    <!-- Main Navigation -->
-    <div class="header-main">
-        <div class="logo">
-            <img src="mct logo.jpg" alt="MCT Logo">
+
+  <div id="navbar-container"></div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" style="background: linear-gradient(135deg, rgba(26, 115, 232, 0.7) 0%, rgba(66, 133, 244, 0.7) 100%), url('https://daffodilvarsity.edu.bd/images/event/80fc6f365cf116f4acc8b338838f01a2.jpg') center/cover; color: white; min-height: 600px; display: flex; align-items: center; padding: 120px 0 80px 0; position: relative; overflow: hidden;">
+      <!-- Background Pattern Overlay -->
+      <div style="position: absolute; inset: 0; background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.3;"></div>
+      
+      <div class="container-google" style="position: relative; z-index: 1; width: 100%;">
+        <div style="max-width: 900px; width: 100%;">
+          <!-- Badge -->
+          <div class="chip-google" style="background: rgba(255,255,255,0.2); color: white; margin-bottom: 24px; display: inline-flex; align-items: center;">
+            <span class="material-icons-outlined" style="font-size: 16px; margin-right: 8px;">school</span>
+            <span>Daffodil International University</span>
+          </div>
+          
+          <!-- Heading -->
+          <h1 class="display-medium" style="color: white; margin-bottom: 24px; font-weight: 400;">
+            Department of<br>
+            <span style="font-weight: 500;">Multimedia & Creative Technology</span>
+          </h1>
+          
+          <!-- Description -->
+          <p class="body-large" style="color: rgba(255,255,255,0.95); margin-bottom: 40px; max-width: 700px; line-height: 1.75;">
+            Shaping the next generation of creative technologists through a blend of artistic expression and technical expertise in digital media, game development, and emerging creative industries.
+          </p>
+          
+          <!-- CTAs -->
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="courses.html" class="btn-google btn-google-primary ripple" style="background: white; color: var(--google-blue); padding: 12px 32px; font-size: 15px; display: inline-flex; align-items: center; text-decoration: none;">
+              <span>Explore Programs</span>
+              <span class="material-icons-outlined" style="font-size: 18px; margin-left: 8px;">arrow_forward</span>
+            </a>
+            <a href="about.html" class="btn-google btn-google-secondary ripple" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); padding: 12px 32px; font-size: 15px; display: inline-flex; align-items: center; text-decoration: none;">
+              <span>Learn More</span>
+            </a>
+          </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#success">Success Story</a></li>
-                <li>
-                    <a href="#about-us">About Us</a>
-                </li>
-                <li><a href="#gallery">Faculty Section</a></li>
-                <li><a href="#gallery">Courses</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Page</a></li>
-                <li><a href="#news">News & Event</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+      </div>
+      
+      <!-- Decorative Image -->
+      <div class="hide-mobile" style="position: absolute; right: -100px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; opacity: 0.1;">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="white">
+          <path d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.2C64.8,55.2,53.8,66.6,40.3,73.8C26.8,81,10.8,84,-6.1,84.8C-23,85.6,-46,84.2,-62.7,75.4C-79.4,66.6,-89.8,50.4,-94.7,33C-99.6,15.6,-99,-3,-93.1,-19.9C-87.2,-36.8,-76,-52,-62.3,-60.4C-48.6,-68.8,-32.4,-70.4,-17.3,-75.2C-2.2,-80,11.8,-88,26.5,-88.8C41.2,-89.6,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+    </section>
 
+    <!-- FOCUS AREAS -->
+    <section style="background: var(--surface); padding: var(--spacing-4) 0; border-bottom: 1px solid var(--surface-container-high);">
+      <div class="container-google">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-3); text-align: center;">
+          <div>
+            <span class="material-icons-outlined text-google-blue" style="font-size: 32px; margin-bottom: 8px; display: block;">devices</span>
+            <div class="body-medium" style="font-weight: 500; color: var(--on-surface);">Web & UI/UX</div>
+          </div>
+          <div>
+            <span class="material-icons-outlined text-google-red" style="font-size: 32px; margin-bottom: 8px; display: block;">view_in_ar</span>
+            <div class="body-medium" style="font-weight: 500; color: var(--on-surface);">AR/VR/XR</div>
+          </div>
+          <div>
+            <span class="material-icons-outlined text-google-yellow" style="font-size: 32px; margin-bottom: 8px; display: block;">video_library</span>
+            <div class="body-medium" style="font-weight: 500; color: var(--on-surface);">3D Animation</div>
+          </div>
+          <div>
+            <span class="material-icons-outlined text-google-green" style="font-size: 32px; margin-bottom: 8px; display: block;">sports_esports</span>
+            <div class="body-medium" style="font-weight: 500; color: var(--on-surface);">Game Development</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-<!-- Hero Section with Video Background and Parallax -->
-<section class="hero">
-    <div class="video-container">
-            <img src="back1.jpeg" alt="Dafodil">
-        </video>
-    </div>
-    <div class="hero-overlay">
-        <h1>WELCOME TO MCT</h1>
-        <p>
-            Department of Multimedia and Creative Technology
-        
+    <!-- MISSION STATEMENT -->
+    <section style="background: var(--surface-variant); padding: var(--spacing-10) 0;">
+      <div class="container-google" style="max-width: 900px; text-align: center;">
+        <div class="label-large text-google-blue" style="margin-bottom: var(--spacing-2); text-transform: uppercase; letter-spacing: 1px;">Our Mission</div>
+        <h2 class="headline-large" style="margin-bottom: var(--spacing-3); color: var(--on-surface);">
+          Empowering students to become <span class="text-google-blue">creative professionals</span> with a strong foundation in multimedia arts and modern technology.
+        </h2>
+        <p class="body-large" style="color: var(--on-surface-variant); line-height: 1.8;">
+          The department nurtures imagination, creativity, and technical fluency, encouraging students to solve real-world problems and contribute meaningfully to the global digital landscape.
         </p>
-        <P>Daffodil International University, Bangladesh </P>
-    </div>
-</section>
+      </div>
+    </section>
 
-    <!-- Information Section -->
-<!-- Split Section -->
-<section id="about-us" class="split-section">
-    <!-- Left Side: Dark Background -->
-    <div class="split-left">
-        <h2>ABOUT US</h2>
-        <div class="blue-line"></div>
-    </div>
-    <!-- Right Side: White Background -->
-    <div class="split-right">
-        <h3>ABOUT THE MCT DEPARTMENT</h3>
-        <p>
-            The Department of Multimedia and Creative Technology (MCT) at Daffodil International University is dedicated to nurturing creative professionals equipped with strong technical skills and artistic vision. The department focuses on the integration of design, media, and technology to meet the evolving demands of the digital industry.
-        </p>
-        <a href="#" class="read-more">Read More</a>
-    </div>
-</section>
-
-
-    <!-- Services Section -->
-<section class="digital-solution">
-    <!-- Video Background -->
-    <video autoplay muted loop class="background-video">
-        <source src="videoplayback (3).mp4" type="video/mp4" />
-    </video>
-
-    <!-- Overlay -->
-    <div class="overlay"></div>
-
-    <!-- Content -->
-    <div class="content">
-        <h2>OUR ACADEMIC FOCUS</h2>
-        <p class="description">
-            The MCT Department offers a balanced curriculum combining creative design and technical expertise to prepare students for careers in multimedia, animation, UI UX, web technologies, and digital media.
-        </p>
-        <div class="services">
-            <!-- Branding Service -->
-            <div class="service">
-                <img src="PIC1.jpg" alt="Branding">
-                <h3>Multimedia Design</h3>
-                <p>Visual communication through graphics, animation, and interactive media.</p>
+    <!-- FEATURED STORY -->
+    <section style="padding: var(--spacing-8) 0; background: var(--surface);">
+      <div class="container-google">
+        <div class="material-card elevation-2 grid-2-col" style="border-radius: var(--radius-xlarge); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+          <!-- Image Side -->
+          <div style="position: relative; min-height: 400px; background: linear-gradient(135deg, var(--google-blue) 0%, var(--google-blue-light) 100%);">
+            <img src="https://daffodilvarsity.edu.bd/images/event/874b71e650542a481b6c71deeaaab077.webp" alt="Student Success" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3; position: absolute; inset: 0;" />
+          </div>
+          
+          <!-- Content Side -->
+          <div style="padding: var(--spacing-6); display: flex; flex-direction: column; justify-content: center;">
+            <div class="chip-google bg-google-green" style="color: white; margin-bottom: var(--spacing-3); display: inline-flex; align-self: flex-start;">
+              <span class="material-icons-outlined" style="font-size: 16px; margin-right: 6px;">emoji_events</span>
+              Success Story
             </div>
-            <!-- Strategy Service -->
-            <div class="service">
-                <img src="PIC2.jpeg" alt="Strategy">
-                <h3>Web Technology</h3>
-                <p>Design and development of modern, responsive web applications.</p>
+            
+            <h2 class="headline-medium" style="margin-bottom: var(--spacing-3); color: var(--on-surface);">
+              Multimedia AI Hackathon Winners
+            </h2>
+            
+            <p class="body-large" style="color: var(--on-surface-variant); margin-bottom: var(--spacing-3); line-height: 1.8;">
+              MCT students recently dominated the national Multimedia AI Hackathon, showcasing innovations in AI-based 3D modeling and game development, attracting hundreds of entries from across the country.
+            </p>
+            
+            <div style="background: var(--surface-variant); border-left: 4px solid var(--google-blue); padding: var(--spacing-2); margin-bottom: var(--spacing-4);">
+              <p class="body-medium" style="color: var(--on-surface-variant); font-style: italic;">
+                "This victory highlights our commitment to pushing the boundaries of creative technology through competition and innovation."
+              </p>
             </div>
-            <!-- Development Service -->
-            <div class="service">
-                <img src="PIC3.jpg" alt="Development">
-                <h3>Creative Media</h3>
-                <p>Digital storytelling, video production, and creative content development.</p>
-            </div>
+            
+            <a href="gallery.html" class="btn-google-text" style="align-self: flex-start; display: inline-flex; align-items: center; padding: 8px 16px 8px 8px;">
+              <span>View Student Projects</span>
+              <span class="material-icons-outlined" style="font-size: 20px; margin-left: 4px;">arrow_forward</span>
+            </a>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-
-    <!-- Testimonial Section -->
-    <!-- Carousel Section -->
-<section>
-    <div id="success" class="carousel-container">
-        <div class="carousel-slide fade-in" id="slide1">
-            <div class="carousel-overlay">
-                <p>“The MCT program helped me develop both creative and technical skills essential for my career.”</p>
-                <p class="author">MCT Graduate, DIU</p>
-            </div>
-            <img src="tp1.png" alt="Graphic Design">
+    <!-- FACILITIES -->
+    <section style="padding: var(--spacing-10) 0; background: var(--surface-variant);">
+      <div class="container-google">
+        <div style="text-align: center; margin-bottom: var(--spacing-6);">
+          <h2 class="headline-large" style="margin-bottom: var(--spacing-2); color: var(--on-surface);">World-Class Facilities</h2>
+          <p class="body-large" style="color: var(--on-surface-variant);">State-of-the-art labs with industry-standard tools</p>
         </div>
-
-        <div class="carousel-slide fade-in" id="slide2">
-            <div class="carousel-overlay">
-                <p>“Practical learning and supportive faculty made my journey at MCT truly valuable.”</p>
-                <p class="author">Final Year Student, MCT</p>
-            </div>
-            <img src="tp2.png" alt="Web Development">
-        </div>
-
-        <div class="carousel-slide fade-in" id="slide3">
-            <div class="carousel-overlay">
-                <p>“The department encourages innovation and creativity in every project.”</p>
-                <p class="author">Alumni, MCT Department</p>
-            </div>
-            <img src="tp3.png" alt="Web Development">
-        </div>
-
-        <!-- Navigation Arrows -->
-        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" onclick="moveSlide(1)">&#10095;</a>
-
-        <!-- Dots -->
-        <div class="carousel-dots">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-    </div>
-</section>
-
-<!-- Partners Section -->
-<section id="gallery" class="partners-section">
-    <div class="partner-container">
-        <!-- Partners Text -->
-        <div class="partners-text">
-            <h2>OUR CAMPUS</h2>
-            <p>Daffodil Smart City, Birulia<br>Savar, Dhaka, Bangladesh</p>
-            <p>Email: mct@daffodilvarsity.edu.bd</p>
-        </div>
-        <!-- Logo and Title -->
-    
-
-        <!-- Divider -->
-        <div class="divider"></div>
-
         
-    </div>
-</section>
-    <!-- Footer Section -->
-    <footer id="contact" class="footer">
-        <div class="footer-container">
-            <!-- Left Section -->
-            <div class="footer-links">
-                <ul>
-                <li><a href="#">About MCT</a></li>
-                <li><a href="#">Faculty</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Gallery</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Security</a></li>
-            </ul>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-3);">
+          <!-- Facility Card 1 -->
+          <div class="material-card" style="padding: var(--spacing-4); transition: all var(--transition-base);">
+            <div style="width: 56px; height: 56px; background: rgba(26, 115, 232, 0.1); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-3);">
+              <span class="material-icons-outlined text-google-blue" style="font-size: 32px;">animation</span>
             </div>
-    
-            <!-- Middle Section (Logo) -->
-            <div class="footer-logo">
-                <img src="mct logo.jpg" alt="Company Logo">
+            <h3 class="title-large" style="margin-bottom: var(--spacing-1);">3D Animation Labs</h3>
+            <p class="body-medium" style="color: var(--on-surface-variant); line-height: 1.7;">Where students learn modeling, character animation, and high-end rendering.</p>
+          </div>
+          
+          <!-- Facility Card 2 -->
+          <div class="material-card" style="padding: var(--spacing-4); transition: all var(--transition-base);">
+            <div style="width: 56px; height: 56px; background: rgba(234, 67, 53, 0.1); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-3);">
+              <span class="material-icons-outlined text-google-red" style="font-size: 32px;">palette</span>
             </div>
-    
-            <!-- Right Section -->
-            <div class="footer-info">
-                <h3>OUR CAMPUS</h3>
-            <p>Daffodil Smart City, Birulia<br>Savar, Dhaka, Bangladesh</p>
-            <p>Email: mct@daffodilvarsity.edu.bd</p>
+            <h3 class="title-large" style="margin-bottom: var(--spacing-1);">Visual Arts Labs</h3>
+            <p class="body-medium" style="color: var(--on-surface-variant); line-height: 1.7;">Dedicated spaces for graphic design, visual storytelling, and digital communication.</p>
+          </div>
+          
+          <!-- Facility Card 3 -->
+          <div class="material-card" style="padding: var(--spacing-4); transition: all var(--transition-base);">
+            <div style="width: 56px; height: 56px; background: rgba(52, 168, 83, 0.1); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-3);">
+              <span class="material-icons-outlined text-google-green" style="font-size: 32px;">sports_esports</span>
             </div>
+            <h3 class="title-large" style="margin-bottom: var(--spacing-1);">Game & AR/VR Labs</h3>
+            <p class="body-medium" style="color: var(--on-surface-variant); line-height: 1.7;">Advanced facilities to build interactive experiences and immersive environments.</p>
+          </div>
+          
+          <!-- Facility Card 4 -->
+          <div class="material-card" style="padding: var(--spacing-4); transition: all var(--transition-base);">
+            <div style="width: 56px; height: 56px; background: rgba(251, 188, 4, 0.1); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-3);">
+              <span class="material-icons-outlined text-google-yellow" style="font-size: 32px;">videocam</span>
+            </div>
+            <h3 class="title-large" style="margin-bottom: var(--spacing-1);">Film & Media Labs</h3>
+            <p class="body-medium" style="color: var(--on-surface-variant); line-height: 1.7;">Equipment for cinematography, editing, and professional media production.</p>
+          </div>
+          
+          <!-- Facility Card 5 -->
+          <div class="material-card" style="padding: var(--spacing-4); transition: all var(--transition-base);">
+            <div style="width: 56px; height: 56px; background: rgba(26, 115, 232, 0.1); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-3);">
+              <span class="material-icons-outlined text-google-blue" style="font-size: 32px;">lightbulb</span>
+            </div>
+            <h3 class="title-large" style="margin-bottom: var(--spacing-1);">Innovation Lab</h3>
+            <p class="body-medium" style="color: var(--on-surface-variant); line-height: 1.7;">A hub for research, prototyping, and creative experimentation.</p>
+          </div>
+          
+          <!-- Facility Card 6 -->
+          <div class="material-card" style="padding: var(--spacing-4); transition: all var(--transition-base);">
+            <div style="width: 56px; height: 56px; background: rgba(234, 67, 53, 0.1); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-3);">
+              <span class="material-icons-outlined text-google-red" style="font-size: 32px;">business</span>
+            </div>
+            <h3 class="title-large" style="margin-bottom: var(--spacing-1);">Industry Partners</h3>
+            <p class="body-medium" style="color: var(--on-surface-variant); line-height: 1.7;">Collaborations with studios like Future Studios Bangladesh for internships.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section style="padding: var(--spacing-10) 0; background: var(--surface);">
+      <div class="container-google">
+        <h2 class="headline-large" style="text-align: center; margin-bottom: var(--spacing-6); color: var(--on-surface);">What Students Say</h2>
         
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-4);">
+          <!-- Testimonial 1 -->
+          <div class="material-card-outlined" style="padding: var(--spacing-4);">
+            <span class="material-icons-outlined" style="font-size: 48px; color: var(--surface-container-high); margin-bottom: var(--spacing-2);">format_quote</span>
+            <p class="body-large" style="color: var(--on-surface); line-height: 1.7; margin-bottom: var(--spacing-3); font-style: italic;">
+              "MCT gave me the technical skills and creative freedom to land my dream job at a top gaming studio."
+            </p>
+            <div style="display: flex; align-items: center; gap: var(--spacing-1);">
+              <div style="width: 4px; height: 24px; background: var(--google-blue); border-radius: 2px;"></div>
+              <span class="body-small" style="color: var(--on-surface-variant); font-weight: 500;">MCT Alumni</span>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="material-card-outlined" style="padding: var(--spacing-4);">
+            <span class="material-icons-outlined" style="font-size: 48px; color: var(--surface-container-high); margin-bottom: var(--spacing-2);">format_quote</span>
+            <p class="body-large" style="color: var(--on-surface); line-height: 1.7; margin-bottom: var(--spacing-3); font-style: italic;">
+              "The hands-on labs like the AR/VR facility are what make this department stand out from the rest."
+            </p>
+            <div style="display: flex; align-items: center; gap: var(--spacing-1);">
+              <div style="width: 4px; height: 24px; background: var(--google-green); border-radius: 2px;"></div>
+              <span class="body-small" style="color: var(--on-surface-variant); font-weight: 500;">Current Student</span>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="material-card-outlined" style="padding: var(--spacing-4);">
+            <span class="material-icons-outlined" style="font-size: 48px; color: var(--surface-container-high); margin-bottom: var(--spacing-2);">format_quote</span>
+            <p class="body-large" style="color: var(--on-surface); line-height: 1.7; margin-bottom: var(--spacing-3); font-style: italic;">
+              "The perfect blend of art and engineering. The faculty support is incredible."
+            </p>
+            <div style="display: flex; align-items: center; gap: var(--spacing-1);">
+              <div style="width: 4px; height: 24px; background: var(--google-yellow); border-radius: 2px;"></div>
+              <span class="body-small" style="color: var(--on-surface-variant); font-weight: 500;">Senior Student</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section style="background: linear-gradient(135deg, var(--google-blue) 0%, var(--google-blue-dark) 100%); padding: var(--spacing-10) 0; position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: 0; background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.3;"></div>
+      
+      <div class="container-google" style="text-align: center; position: relative; z-index: 1; max-width: 800px;">
+        <h2 class="headline-large" style="color: white; margin-bottom: var(--spacing-3);">Ready to Innovate?</h2>
+        <p class="body-large" style="color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-5);">Join the most dynamic multimedia program in Bangladesh and start your creative journey today.</p>
         
-    </footer>
-    <!-- Link to Script -->
-    <script src="script.js"></script>
+        <div style="display: flex; gap: var(--spacing-2); justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-google btn-google-primary ripple" style="background: white; color: var(--google-blue); padding: 14px 40px; font-size: 16px;">
+            Apply Now
+          </a>
+          <a href="courses.html" class="btn-google btn-google-secondary ripple" style="background: transparent; color: white; border: 2px solid white; padding: 14px 40px; font-size: 16px;">
+            Explore Programs
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+  <script src="main.js"></script>
 </body>
-</body>
+
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | MCT Department</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <main style="background: var(--surface-variant); min-height: 100vh; padding-bottom: var(--spacing-8);">
+        <!-- Hero -->
+        <section style="background: var(--surface); padding: var(--spacing-10) 0; text-align: center;">
+            <div class="container-google" style="max-width: 900px;">
+                <h1 class="display-small" style="color: var(--on-surface); margin-bottom: var(--spacing-2);">Curriculum</h1>
+                <p class="body-large" style="color: var(--on-surface-variant);">
+                    Our course structure builds foundational skills before advancing to specialized tracks in multimedia and creative technology.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter -->
+        <section style="padding: var(--spacing-6) 0;">
+            <div class="container-google">
+                <div style="display: flex; align-items: center; gap: var(--spacing-2); margin-bottom: var(--spacing-4);">
+                    <span class="label-large" style="color: var(--on-surface-variant);">Filter:</span>
+                    <div id="filter-buttons" style="display: flex; gap: 8px;">
+                        <button data-filter="All" class="filter-btn chip-google" style="background: var(--google-blue); color: white; cursor: pointer;">All</button>
+                        <button data-filter="Core" class="filter-btn chip-google" style="cursor: pointer;">Core</button>
+                        <button data-filter="Elective" class="filter-btn chip-google" style="cursor: pointer;">Elective</button>
+                    </div>
+                </div>
+
+                <!-- Course List -->
+                <div id="course-list" style="display: grid; gap: var(--spacing-3);"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="main.js"></script>
+    <script>
+        const COURSES_DATA = [
+            { code: 'MCT-101', title: 'Introduction to Multimedia', credits: 3, semester: 1, type: 'Core', description: 'Fundamentals of digital media types and creation tools.', icon: 'movie' },
+            { code: 'MCT-102', title: 'Graphic Design Principles', credits: 3, semester: 1, type: 'Core', description: 'Visual hierarchy, typography, and color theory.', icon: 'palette' },
+            { code: 'MCT-105', title: 'Drawing & Sketching', credits: 3, semester: 1, type: 'Core', description: 'Basic artistic skills for digital translation.', icon: 'brush' },
+            { code: 'MCT-201', title: 'Web Design & Development', credits: 3, semester: 2, type: 'Core', description: 'HTML, CSS, JS and UI/UX basics.', icon: 'web' },
+            { code: 'MCT-205', title: '3D Modeling & Rendering', credits: 3, semester: 2, type: 'Core', description: 'Polygon modeling, texturing and lighting.', icon: 'view_in_ar' },
+            { code: 'MCT-301', title: '2D/3D Animation', credits: 3, semester: 3, type: 'Core', description: 'Principles of animation and character motion.', icon: 'animation' },
+            { code: 'MCT-305', title: 'Game Design & Development', credits: 3, semester: 4, type: 'Elective', description: 'Game mechanics, level design and engines.', icon: 'sports_esports' },
+            { code: 'MCT-310', title: 'VFX & Motion Graphics', credits: 3, semester: 4, type: 'Elective', description: 'Compositing and special effects for film.', icon: 'auto_awesome' },
+            { code: 'MCT-401', title: 'AR/VR Technologies', credits: 3, semester: 5, type: 'Elective', description: 'Immersive experience creation.', icon: 'vrpano' },
+            { code: 'MCT-402', title: 'Film & Media Production', credits: 3, semester: 5, type: 'Elective', description: 'Cinematography and editing.', icon: 'videocam' },
+            { code: 'MCT-499', title: 'Capstone Project', credits: 6, semester: 8, type: 'Core', description: 'Final year comprehensive creative project.', icon: 'workspace_premium' }
+        ];
+
+        let currentFilter = 'All';
+
+        function renderCourses() {
+            const courseList = document.getElementById('course-list');
+            const filtered = currentFilter === 'All' ? COURSES_DATA : COURSES_DATA.filter(c => c.type === currentFilter);
+            
+            courseList.innerHTML = filtered.map(course => `
+                <div class="material-card" style="padding: var(--spacing-4); display: grid; grid-template-columns: auto 1fr auto; gap: var(--spacing-3); align-items: start;">
+                    <div style="width: 56px; height: 56px; background: ${course.type === 'Core' ? 'rgba(26, 115, 232, 0.1)' : 'rgba(52, 168, 83, 0.1)'}; border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center;">
+                        <span class="material-icons-outlined" style="font-size: 28px; color: ${course.type === 'Core' ? 'var(--google-blue)' : 'var(--google-green)'};">${course.icon}</span>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                            <span class="title-medium" style="color: var(--on-surface);">${course.title}</span>
+                            <span class="chip-google" style="background: ${course.type === 'Core' ? 'rgba(26, 115, 232, 0.1)' : 'rgba(52, 168, 83, 0.1)'}; color: ${course.type === 'Core' ? 'var(--google-blue)' : 'var(--google-green)'}; font-size: 11px; padding: 4px 8px;">${course.type}</span>
+                        </div>
+                        <p class="body-small font-mono" style="color: var(--on-surface-subtle); margin-bottom: 8px;">${course.code} • Semester ${course.semester}</p>
+                        <p class="body-medium" style="color: var(--on-surface-variant);">${course.description}</p>
+                    </div>
+                    <div class="chip-google" style="background: var(--surface-variant);">
+                        <span class="material-icons-outlined" style="font-size: 16px; margin-right: 4px;">credit_card</span>
+                        ${course.credits} Credits
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                currentFilter = e.target.dataset.filter;
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.style.background = 'var(--surface-container)';
+                    b.style.color = 'var(--on-surface-variant)';
+                });
+                e.target.style.background = 'var(--google-blue)';
+                e.target.style.color = 'white';
+                renderCourses();
+            });
+        });
+
+        renderCourses();
+    </script>
+</body>
+</html>

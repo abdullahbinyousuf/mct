@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty | MCT Department</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <div id="navbar-container"></div>
+
+    <section class="min-h-screen bg-gray-50 pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Header with Search -->
+            <div class="text-center mb-16 relative">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our Faculty
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    Learn from experienced educators and industry professionals who are passionate
+                    about shaping the next generation of creative technologists.
+                </p>
+
+                <div class="max-w-md mx-auto relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i data-lucide="search" class="h-5 w-5 text-gray-400"></i>
+                    </div>
+                    <input type="text" id="faculty-search" placeholder="Search faculty by name or skill..."
+                        class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-full bg-white shadow-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition" />
+                </div>
+            </div>
+
+            <!-- Faculty Grid -->
+            <div id="faculty-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Injected by JS -->
+            </div>
+
+            <div id="no-results" class="text-center py-12 hidden">
+                <p class="text-gray-500">No faculty members found matching your search.</p>
+            </div>
+
+            <!-- Join Team CTA -->
+            <div class="mt-20 bg-white rounded-3xl shadow-lg p-8 md:p-12 text-center border border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Join Our Team</h3>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    We're always looking for passionate educators and industry professionals to join
+                    our faculty. If you're interested in shaping the future of creative technology
+                    education, we'd love to hear from you.
+                </p>
+                <button
+                    class="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    View Career Opportunities
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="main.js"></script>
+    <script>
+        const FACULTY_DATA = [
+            {
+                id: 'f1',
+                name: 'Mr. Md. Salah Uddin',
+                designation: 'Assistant Professor and Head',
+                email: 'headmct@daffodilvarsity.edu.bd',
+                phone: 'Ext.40100',
+                cellPhone: '01847334769',
+                imageUrl: 'https://i.ibb.co.com/zhLjJS05/salah-uddin.jpg',
+                specialization: ['Structured and OOP Programming', 'Multimedia Authoring', 'Database', 'Game Theory', 'Script Programming', 'Web Engine'],
+                personalWebpage: 'https://faculty.daffodilvarsity.edu.bd/profile/mct/salah-mct.html',
+            },
+            {
+                id: 'f2',
+                name: 'Prof. Dr. Md Kabirul Islam',
+                designation: 'Professor & Dean',
+                email: 'kislam@daffodilvarsity.edu.bd',
+                phone: '9138234-5, Ext. 157',
+                cellPhone: '01819382879',
+                imageUrl: 'https://i.ibb.co.com/v435bSPF/29c07d00e8a21ecc5596d98e93279885.jpg',
+                specialization: ['ICT for Development', 'E-learning and M-learning', 'Teacher Development', 'Research Culture Development'],
+                personalWebpage: 'https://faculty.daffodilvarsity.edu.bd/profile/mct/kislam.html',
+            },
+            {
+                id: 'f3',
+                name: 'Mr. Md Shafikul Islam',
+                designation: 'Lecturer',
+                email: 'shafikul.mct@diu.edu.bd',
+                phone: '+8801770494091',
+                cellPhone: '+8801521407981',
+                imageUrl: 'assets/images/shuvro.jpg',
+                specialization: ['Multimedia', 'Creative Technology'],
+                personalWebpage: 'https://faculty.daffodilvarsity.edu.bd/profile/mct/shafikul.html',
+            },
+        ];
+
+        const grid = document.getElementById('faculty-grid');
+        const searchInput = document.getElementById('faculty-search');
+        const noResults = document.getElementById('no-results');
+
+        function renderFaculty(data) {
+            grid.innerHTML = '';
+            if (data.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            data.forEach(member => {
+                const card = document.createElement('div');
+                card.className = "group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-200 hover:border-blue-300 flex flex-col";
+                card.innerHTML = `
+                  <!-- Image Header -->
+                  <div class="relative h-72 bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center overflow-hidden">
+                    ${member.imageUrl ?
+                        `<img src="${member.imageUrl}" alt="${member.name}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />` :
+                        `<div class="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center"><i data-lucide="user" class="w-16 h-16 text-white"></i></div>`
+                    }
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+
+                  <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">${member.name}</h3>
+                    <p class="text-blue-600 font-medium mb-4 text-sm">${member.designation}</p>
+
+                    <!-- Skills -->
+                    <div class="mb-6 flex-grow">
+                      <div class="flex flex-wrap gap-2">
+                        ${member.specialization.slice(0, 4).map(skill =>
+                        `<span class="px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-wide rounded-full">${skill}</span>`
+                    ).join('')}
+                        ${member.specialization.length > 4 ?
+                        `<span class="px-3 py-1 bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-wide rounded-full">+${member.specialization.length - 4} more</span>` : ''
+                    }
+                      </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-2 text-sm pt-4 border-t border-gray-100">
+                      <a href="mailto:${member.email.split(',')[0].trim()}" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
+                        <span class="truncate">${member.email.split(',')[0].trim()}</span>
+                      </a>
+                      ${member.cellPhone ? `
+                      <a href="tel:${member.cellPhone.split(',')[0].trim()}" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4 text-gray-400"></i>
+                        <span>${member.cellPhone.split(',')[0].trim()}</span>
+                      </a>` : ''}
+                      ${member.personalWebpage ? `
+                      <a href="${member.personalWebpage}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center mt-2 text-xs text-blue-600 hover:text-blue-800 font-bold uppercase tracking-wider">
+                        View Full Profile <i data-lucide="external-link" class="h-3 w-3 ml-1"></i>
+                      </a>` : ''}
+                    </div>
+                  </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        renderFaculty(FACULTY_DATA);
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = FACULTY_DATA.filter(member =>
+                member.name.toLowerCase().includes(term) ||
+                member.specialization.some(s => s.toLowerCase().includes(term))
+            );
+            renderFaculty(filtered);
+        });
+    </script>
+</body>
+
+</html>

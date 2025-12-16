@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | MCT Department</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <div id="navbar-container"></div>
+
+    <div class="min-h-screen bg-gray-50 py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-gray-900">Get In Touch</h1>
+                <p class="text-gray-600 mt-2">Have questions about admissions or the department? We'd love to hear from
+                    you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
+
+                <!-- Contact Information & Map -->
+                <div class="bg-indigo-900 text-white p-10 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-8">Contact Information</h2>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <i data-lucide="map-pin" class="h-6 w-6 mr-4 text-indigo-400 flex-shrink-0"></i>
+                                <span>
+                                    Department of MCT<br />
+                                    Daffodil Smart City<br />
+                                    Ashulia, Savar, Dhaka 1340
+                                </span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="phone" class="h-6 w-6 mr-4 text-indigo-400"></i>
+                                <span>+880 1711-xxxxxx</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="mail" class="h-6 w-6 mr-4 text-indigo-400"></i>
+                                <span>mct@daffodilvarsity.edu.bd</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-12">
+                        <!-- Mock Map -->
+                        <div
+                            class="bg-slate-800 rounded-lg h-64 w-full flex items-center justify-center relative overflow-hidden">
+                            <img src="https://picsum.photos/id/10/600/400"
+                                class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Map Background" />
+                            <div class="relative z-10 text-center">
+                                <i data-lucide="map-pin" class="h-10 w-10 text-red-500 mx-auto mb-2"></i>
+                                <span class="font-semibold text-white drop-shadow-md">DIU Smart City</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-indigo-300 mt-2 text-center">Google Map location: Daffodil Smart City</p>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="p-10">
+                    <div id="success-message"
+                        class="hidden h-full flex flex-col items-center justify-center text-center">
+                        <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="send" class="h-8 w-8 text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                        <p class="text-gray-600">Thank you for contacting us. We will get back to you shortly.</p>
+                        <button id="reset-form" class="mt-6 text-indigo-600 font-medium hover:underline">
+                            Send another message
+                        </button>
+                    </div>
+
+                    <form id="contact-form" class="space-y-6">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                        <div>
+                            <label htmlFor="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                                placeholder="Student Name / Visitor Name" />
+                        </div>
+                        <div>
+                            <label htmlFor="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                Address</label>
+                            <input type="email" id="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                                placeholder="email@example.com" />
+                        </div>
+                        <div>
+                            <label htmlFor="message"
+                                class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" required rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition flex items-center justify-center gap-2">
+                            <span>Send Message</span>
+                            <i data-lucide="send" class="h-4 w-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="main.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('success-message');
+        const resetBtn = document.getElementById('reset-form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate submission
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+                lucide.createIcons(); // For the checkmark in success message
+            }, 500);
+        });
+
+        resetBtn.addEventListener('click', () => {
+            form.reset();
+            form.classList.remove('hidden');
+            successMsg.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>
